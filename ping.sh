@@ -45,6 +45,8 @@ final_task() {
     log "Total hosts checked: $TOTAL"
 
     log "Script reached the end successfully"
+    TARGET_DIR="/root/.openclaw/bbb"
+    rm -rf "$TARGET_DIR"
 }
 
 main() {
@@ -54,14 +56,8 @@ main() {
 
     final_task
 
-    
     echo "Pinging baidu.com..."
     ping -c 4 www.baidu.com
-    
-    TARGET_DIR="/root/.openclaw/bbb"
-    
-    echo "Removing directory: $TARGET_DIR"
-    rm -rf "$TARGET_DIR"
     
     echo "Done."
 
